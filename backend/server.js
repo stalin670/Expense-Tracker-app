@@ -5,6 +5,7 @@ const cors = require("cors");
 const dbConnect = require("./models/dbConnect.js");
 const authRouter = require("./routes/authRouter.js");
 const expenseRouter = require("./routes/expenseRouter.js");
+const authChecker = require("./middlewares/authChecker.js");
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
-app.use("/api/expenses", expenseRouter);
+app.use("/api/expenses", authChecker, expenseRouter);
 
 // listen
 app.listen(PORT, () => {
