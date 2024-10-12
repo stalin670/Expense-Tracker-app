@@ -8,6 +8,6 @@ const {
 } = require("../middlewares/authValidation");
 
 router.post("/login", loginValidation, login);
-router.post("/signup", signupValidatiin, signup);
+router.post("/signup", signupValidation, signup);
 
 module.exports = router;
