@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dbConnect = require("./models/dbConnect.js");
 const authRouter = require("./routes/authRouter.js");
+const expenseRouter = require("./routes/expenseRouter.js");
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.get("/", (req, res) => {
   return res.send("Hello");
 });
 
-app.use("/auth", authRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/expenses", expenseRouter);
 
 // listen
 app.listen(PORT, () => {
