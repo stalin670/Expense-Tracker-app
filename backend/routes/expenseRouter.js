@@ -7,8 +7,8 @@ const {
   deleteTransaction,
 } = require("../controllers/expenseController");
 
-router.get('/', getAllTransactions);
-router.post('/', addTransaction);
-router.delete('/', deleteTransaction);
+router.get("/", getAllTransactions);
+router.post("/", addTransaction);
+router.delete("/:expenseId", deleteTransaction);
 
 module.exports = router;

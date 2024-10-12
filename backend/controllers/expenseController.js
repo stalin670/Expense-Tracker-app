@@ -38,7 +38,7 @@ const getAllTransactions = async (req, res) => {
 
 const deleteTransaction = async (req, res) => {
   const { _id } = req.user;
-  const expenseId = req.params.expenseId;
+  const { expenseId } = req.params;
   try {
     const user = await User.findByIdAndUpdate(
       _id,
@@ -46,10 +46,10 @@ const deleteTransaction = async (req, res) => {
       { new: true }
     );
     return res.status(200).json({
-        message: "Expense deleted successfully",
-        success: true,
-        data: user?.expenses,
-      });
+      message: "Expense deleted successfully",
+      success: true,
+      data: user?.expenses,
+    });
   } catch (error) {
     return res
       .status(500)
