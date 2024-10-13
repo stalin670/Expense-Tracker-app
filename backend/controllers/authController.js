@@ -8,7 +8,7 @@ const signup = async (req, res) => {
     const user = await User.findOne({ email });
     if (user) {
       return res
-        .status(500)
+        .status(409)
         .json({ message: "User already exists !", success: false });
     }
     const newUser = new User({ name, email, password });
@@ -30,14 +30,14 @@ const login = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       return res
-        .status(404)
+        .status(403)
         .json({ message: "User does not exist!", success: false });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res
-        .status(401)
+        .status(403)
         .json({ message: "Password does not match", success: false });
     }
 

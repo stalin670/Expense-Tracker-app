@@ -19,7 +19,7 @@ body {
 body {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .container {
@@ -61,7 +61,7 @@ body {
 }
 
 button {
-  background-color: purple;
+  background-color: #0056b3;
   border: none;
   font-size: 15px;
   color: white;
