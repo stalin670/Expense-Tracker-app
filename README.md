@@ -1,4 +1,4 @@
-# Expense Tracker App
+# Expense Tracker App ![favicon-32x32](https://github.com/user-attachments/assets/b81a1909-8624-44f1-a1bc-e4f4f4d575d5) 
 
 ![Expense-Tracky](https://github.com/user-attachments/assets/d53fb60a-1f66-4066-8f3c-3cc74d0f0da5) <!-- You can add a banner or screenshot of your app -->
 
