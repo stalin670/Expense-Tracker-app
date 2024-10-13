@@ -15,8 +15,12 @@ const PORT = process.env.PORT || 8001;
 dbConnect();
 
 // Middlewares
+const corsOptions = {
+  origin: ["http://localhost:3000"],
+  credentials: true,
+};
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Routes
 app.get("/", (req, res) => {
