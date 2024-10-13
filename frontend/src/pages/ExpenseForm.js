@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { handleError } from "../utils";
 
-const ExpenseForm = () => {
+function ExpenseForm({ addTransaction }) {
   const [expenseInfo, setExpenseInfo] = useState({
     amount: "",
     text: "",
@@ -53,6 +53,6 @@ const ExpenseForm = () => {
       </form>
     </div>
   );
-};
+}
 
 export default ExpenseForm;
